@@ -1,0 +1,42 @@
+{
+  "name": "node-addon-util",
+  "description": "Module for using Node-API from C++",
+  "version": "0.0.1",
+  "type": "module",
+  "gypfile": true,
+  "main": "lib/index.js",
+  "author": "heora",
+  "scripts": {
+    "prebuild": "node-gyp configure",
+    "build": "node-gyp build",
+    "build:dev": "node-gyp build --debug",
+    "rebuild": "node-gyp rebuild",
+    "clean": "node-gyp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yzqzy/node-addon-util.git"
+  },
+  "keywords": [
+    "node-addon-api",
+    "c++",
+    "navtive-module",
+    "es6"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "binding.gyp"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yzqzy/node-addon-util/issues"
+  },
+  "homepage": "https://github.com/yzqzy/node-addon-util#readme",
+  "dependencies": {
+    "node-addon-api": "^7.1.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^10.0.1"
+  }
+}
