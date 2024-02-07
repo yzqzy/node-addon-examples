@@ -1,5 +1,5 @@
 {
-  "name": "node-addon-util",
+  "name": "node-addon-examples",
   "description": "Module for using Node-API from C++",
   "version": "0.0.1",
   "type": "module",
@@ -7,7 +7,7 @@
   "main": "lib/index.js",
   "author": "heora",
   "scripts": {
-    "prebuild": "node-gyp configure",
+    "configure": "node-gyp configure",
     "build": "node-gyp build",
     "build:dev": "node-gyp build --debug",
     "rebuild": "node-gyp rebuild",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yzqzy/node-addon-util.git"
+    "url": "git+https://github.com/yzqzy/node-addon-examples.git"
   },
   "keywords": [
     "node-addon-api",
@@ -30,9 +30,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yzqzy/node-addon-util/issues"
+    "url": "https://github.com/yzqzy/node-addon-examples/issues"
   },
-  "homepage": "https://github.com/yzqzy/node-addon-util#readme",
+  "homepage": "https://github.com/yzqzy/node-addon-examples#readme",
   "dependencies": {
     "bindings": "^1.5.0",
     "node-addon-api": "^7.1.0"

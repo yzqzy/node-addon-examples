@@ -4,8 +4,19 @@ Napi::Value Add(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
 
-  int a = info[0].As<Napi::Number>();
-  int b = info[1].As<Napi::Number>();
+  if (info.Length() < 2)
+  {
+    Napi::TypeError::New(env, "Wrong number of arguments").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+  if (!info[0].IsNumber() || !info[1].IsNumber())
+  {
+    Napi::TypeError::New(env, "Arguments must be numbers").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
+  double a = info[0].As<Napi::Number>().DoubleValue();
+  double b = info[1].As<Napi::Number>().DoubleValue();
 
   return Napi::Number::New(env, a + b);
 }
@@ -14,8 +25,19 @@ Napi::Value Subtract(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
 
-  int a = info[0].As<Napi::Number>();
-  int b = info[1].As<Napi::Number>();
+  if (info.Length() < 2)
+  {
+    Napi::TypeError::New(env, "Wrong number of arguments").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+  if (!info[0].IsNumber() || !info[1].IsNumber())
+  {
+    Napi::TypeError::New(env, "Arguments must be numbers").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
+  double a = info[0].As<Napi::Number>().DoubleValue();
+  double b = info[1].As<Napi::Number>().DoubleValue();
 
   return Napi::Number::New(env, a - b);
 }
@@ -24,8 +46,19 @@ Napi::Value Multiply(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
 
-  int a = info[0].As<Napi::Number>();
-  int b = info[1].As<Napi::Number>();
+  if (info.Length() < 2)
+  {
+    Napi::TypeError::New(env, "Wrong number of arguments").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+  if (!info[0].IsNumber() || !info[1].IsNumber())
+  {
+    Napi::TypeError::New(env, "Arguments must be numbers").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
+  double a = info[0].As<Napi::Number>().DoubleValue();
+  double b = info[1].As<Napi::Number>().DoubleValue();
 
   return Napi::Number::New(env, a * b);
 }
@@ -34,8 +67,19 @@ Napi::Value Divide(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
 
-  int a = info[0].As<Napi::Number>();
-  int b = info[1].As<Napi::Number>();
+  if (info.Length() < 2)
+  {
+    Napi::TypeError::New(env, "Wrong number of arguments").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+  if (!info[0].IsNumber() || !info[1].IsNumber())
+  {
+    Napi::TypeError::New(env, "Arguments must be numbers").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
+  double a = info[0].As<Napi::Number>().DoubleValue();
+  double b = info[1].As<Napi::Number>().DoubleValue();
 
   return Napi::Number::New(env, a / b);
 }
